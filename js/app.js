@@ -732,6 +732,17 @@
     }
     const da = new DynamicAdapt("max");
     da.init();
+    let butt = document.querySelector(".header__logo");
+    let body = document.querySelector("body");
+    butt.addEventListener("click", (function(e) {
+        body.classList.toggle("dark");
+        console.log("ciii");
+    }));
+    let paintSpan = document.querySelector(".title");
+    function showColor() {
+        paintSpan.classList.toggle("white");
+    }
+    butt.addEventListener("click", showColor);
     window["FLS"] = true;
     isWebp();
     menuInit();
