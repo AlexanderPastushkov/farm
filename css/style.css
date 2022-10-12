@@ -91,6 +91,10 @@ body {
       overscroll-behavior: none;
 }
 
+.dark {
+  background: rgb(228, 81, 81);
+}
+
 .wrapper {
   min-height: 100%;
   display: -webkit-box;
@@ -263,6 +267,14 @@ body {
 
 .title span {
   color: #23B123;
+}
+
+.white {
+  color: #ffffff;
+}
+
+.white span {
+  color: #ffffff;
 }
 
 .text {
