@@ -732,17 +732,26 @@
     }
     const da = new DynamicAdapt("max");
     da.init();
-    let butt = document.querySelector(".header__logo");
+    let script_button = document.querySelector(".header__logo");
     let body = document.querySelector("body");
-    butt.addEventListener("click", (function(e) {
-        body.classList.toggle("dark");
+    script_button.addEventListener("click", (function(e) {
+        body.classList.toggle("pink");
         console.log("ciii");
     }));
-    let paintSpan = document.querySelector(".title");
-    function showColor() {
-        paintSpan.classList.toggle("white");
-    }
-    butt.addEventListener("click", showColor);
+    let whiteSpan = document.querySelectorAll(".title");
+    script_button.addEventListener("click", (function(item) {
+        whiteSpan.forEach((item => {
+            item.classList.toggle("white");
+        }));
+    }));
+    console.log(whiteSpan);
+    let buttonColor = document.querySelectorAll(".button");
+    console.log(buttonColor);
+    script_button.addEventListener("click", (function(item) {
+        buttonColor.forEach((item => {
+            item.classList.toggle("button__new");
+        }));
+    }));
     window["FLS"] = true;
     isWebp();
     menuInit();
