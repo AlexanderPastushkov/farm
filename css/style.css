@@ -91,7 +91,7 @@ body {
       overscroll-behavior: none;
 }
 
-.dark {
+.pink {
   background: rgb(228, 81, 81);
 }
 
@@ -238,6 +238,10 @@ body {
 
 .button._fw {
   width: 100%;
+}
+
+.button__new {
+  background-color: #c39999;
 }
 
 [class*=-ibg] {
