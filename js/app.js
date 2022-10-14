@@ -733,24 +733,28 @@
     const da = new DynamicAdapt("max");
     da.init();
     let script_button = document.querySelector(".header__logo");
-    let body = document.querySelector("body");
-    script_button.addEventListener("click", (function(e) {
-        body.classList.toggle("pink");
-        console.log("ciii");
-    }));
+    document.querySelector("body");
+    const currentTheme = localStorage.getItem("theme");
     let whiteSpan = document.querySelectorAll(".title");
-    script_button.addEventListener("click", (function(item) {
+    if ("dark" == currentTheme) {
+        document.body.classList.add("pink");
+        whiteSpan.forEach((item => {
+            item.classList.add("white");
+        }));
+    }
+    script_button.addEventListener("click", (function() {
+        document.body.classList.toggle("pink");
+        let theme = "light";
+        if (document.body.classList.contains("pink")) theme = "dark";
+        localStorage.setItem("theme", theme);
+    }));
+    script_button.addEventListener("click", (function() {
         whiteSpan.forEach((item => {
             item.classList.toggle("white");
         }));
-    }));
-    console.log(whiteSpan);
-    let buttonColor = document.querySelectorAll(".button");
-    console.log(buttonColor);
-    script_button.addEventListener("click", (function(item) {
-        buttonColor.forEach((item => {
-            item.classList.toggle("button__new");
-        }));
+        let theme = "light";
+        if (item.classList.contains("white")) theme = "dark";
+        localStorage.setItem("theme", theme);
     }));
     window["FLS"] = true;
     isWebp();
